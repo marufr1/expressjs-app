@@ -1,8 +1,7 @@
 const express = require('express')
-const router = require('./routes/app.route')
+const router = require('./src/routes/app.route')
 const app = express()
 const port = 3000
-
 
 // by Muhammad Ma'ruf Rahman
 
