@@ -17,7 +17,7 @@ exports.postProduct = async (req, res) => {
         console.log(err)
         res.status(503).send({
             status: "FAILED",
-            message: "Failed for create user to database"
+            message: "Failed for add product to database"
         })
     })
 }
