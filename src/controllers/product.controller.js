@@ -1,13 +1,13 @@
 const {user, Product} = require('../../models/index')
 
 exports.postProduct = async (req, res) => {
-    const {name, price, quantity, user_id} = req.body
+    const {name, price, quantity} = req.body
 
     await Product.create({
         name: name,
         price: price,
         quantity: quantity,
-        user_id: user_id 
+        user_id: req.id 
     }).then(products => {
         res.status(200).send({
             status: "SUCCESS",
@@ -17,7 +17,7 @@ exports.postProduct = async (req, res) => {
         console.log(err)
         res.status(503).send({
             status: "FAILED",
-            message: "Failed for create user to database"
+            message: "Failed for add product to database"
         })
     })
 }

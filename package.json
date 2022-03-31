@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon app.js",
-    "db:create:migrate": "sequelize model:generate --name",
+    "db:create:migrate": "sequelize migration:generate --name",
     "db:migrate": "sequelize db:migrate",
     "db:rollback": "sequelize db:migrate:undo",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,9 @@
   "author": "Ma'ruf Rahman",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0",
     "sequelize-cli": "^6.4.1"
