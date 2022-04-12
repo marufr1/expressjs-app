@@ -9,7 +9,7 @@
     "db:create:migrate": "sequelize migration:generate --name",
     "db:migrate": "sequelize db:migrate",
     "db:rollback": "sequelize db:migrate:undo",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Ma'ruf Rahman",
@@ -23,6 +23,8 @@
     "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
+    "jest": "^27.5.1",
+    "node-mocks-http": "^1.11.0",
     "nodemon": "^2.0.15"
   }
 }
