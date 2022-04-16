@@ -6,21 +6,18 @@ name: Build
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:
-    - main
+    branches: [ main ]
   pull_request:
     types: [ opened, synchronize, reopened ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   ci-test:
-  name: ci-test
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v2
-  with:
-    fetch-depth: O
-  - name: Install dependencies
-  run: sudo npm install
-  - name: Run Tests
-  run: sudo npm run test
+    name: CI Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: sudo npm install
+    - name: Run test
+      run: sudo npm test
